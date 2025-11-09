@@ -12,11 +12,37 @@ jobs:
       - name: Write a message
         run: echo "Hello world, im running my second workflow!" > message.txt
 
+      - uses: actions/upload-artifact@v4
+        with:
+          # Name of the artifact to upload.
+          # Optional. Default is 'artifact'
+          name: strigus
+
+          # A file, directory or wildcard pattern that describes what to upload
+          # Required.
+          path: message.txt
+
+          if-no-files-found: error
+
   job_2:
     runs-on: ubuntu-latest
     steps:
       - name: File not available in this job right now
         run: ls -lha
 
+      - uses: actions/download-artifact@v5
+        with:
+          name: strigus
+          path: message.txt
+
+      - name: File availabe in strigus folder
+        run: ls -lha && ls ./strigus
+
       - name: Trying access message file
+        run: mv strigus/message.txt . && rm -rf ./strigus
+
+      - name: File availabe in root
+        run: ls -lha
+
+      - name: access message file after artifact download
         run: cat message.txt
