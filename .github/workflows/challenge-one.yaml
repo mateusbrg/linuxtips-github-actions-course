@@ -1,0 +1,21 @@
+name: Challenge one
+
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        type: string
+        description: Type a Docker Image name
+
+jobs:
+  challenge-one:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Docker Image
+        run: echo  "lets search ${{ github.event.inputs.name }} docker image"
+
+      - name: Pull user-provided Docker image
+        run: docker pull "${{ github.event.inputs.name }}"
+
+      - name: Check available docker images
+        run: docker images
