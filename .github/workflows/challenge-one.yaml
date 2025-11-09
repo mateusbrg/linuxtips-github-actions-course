@@ -16,3 +16,6 @@ jobs:
 
       - name: Pull user-provided Docker image
         run: docker pull "${{ github.event.inputs.name }}"
+
+      - name: Check available docker images
+        run: docker images
