@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print Docker Image
-      - run: echo  "lets search ${{ github.event.inputs.name }} docker image"
+        run: echo  "lets search ${{ github.event.inputs.name }} docker image"
 
       - name: Pull user-provided Docker image
         run: docker pull "${{ github.event.inputs.name }}"
