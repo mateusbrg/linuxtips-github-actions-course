@@ -30,8 +30,5 @@ jobs:
         id: docker-scout
         uses: docker/scout-action@v1
         with:
-          command: cves,recommendations,compare
-          to-latest: true
-          ignore-base: true
-          ignore-unchanged: true
-          only-fixed: true
+          command: cves
+          image: ${{ github.event.inputs.name }}
