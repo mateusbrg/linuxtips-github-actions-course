@@ -1,0 +1,19 @@
+name: My second workflow
+
+on: workflow_dispatch
+
+jobs:
+  between-steps-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Ubuntu Version
+        run: cat /etc/os-release
+
+      - name: Write a message
+        run: echo "Hello world, im running my second workflow!" > message.txt
+
+      - name: Another Thing
+        run: ls -lha
+
+      - name: Read file content
+        run: cat message.txt
