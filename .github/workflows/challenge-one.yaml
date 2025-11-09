@@ -1,4 +1,4 @@
-name: Challenge 1
+name: Challenge one
 
 on:
   workflow_dispatch:
