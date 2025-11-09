@@ -4,7 +4,7 @@
 
 ## About
 
-This repository contains my personal learning materials, exercises, and projects focused on CI/CD automation using GitHub Actions—from basic workflows to advanced setups.
+This repository contains my personal learning materials, exercises, and projects focused on CI/CD automation using GitHub Actions from basic workflows to advanced setups.
 
 - Design and implement complete CI/CD pipelines with GitHub Actions
 - Automate builds, tests, and deployments across multiple environments
