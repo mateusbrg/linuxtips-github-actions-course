@@ -1,0 +1,12 @@
+name: Testando Branch Protection Rule
+
+on:
+  branch_protection_rule:
+    types: [created, edited, deleted]
+
+jobs:
+  print-modification:
+    runs-on: ubuntu-latest
+    steps:
+      - name: notification warning
+        run: echo "Workflow triggered by branch protection rule"
