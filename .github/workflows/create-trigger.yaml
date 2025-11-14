@@ -1,0 +1,10 @@
+name: 'Testing create trigger'
+
+on: create
+
+jobs:
+  create-branch-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create Trigger Test
+        run: echo "new branch created on this repo"
