@@ -1,0 +1,10 @@
+name: 'Testing delete trigger'
+
+on: delete
+
+jobs:
+  delete-branch-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete Trigger Test
+        run: echo "some branch was deleted on this repo"
