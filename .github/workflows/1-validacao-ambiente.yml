@@ -1,0 +1,14 @@
+name: Environment Validation
+
+on: workflow_dispatch
+
+jobs:
+  start_environment_validation:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Start Environment Validation
+        run: echo "Starting environment validation..."
+
+  call_build_and_tests:
+    needs: start_environment_validation
+    uses: ./.github/workflows/2-build-e-testes.yml

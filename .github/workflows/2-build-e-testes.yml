@@ -1,0 +1,13 @@
+name: Project Build and Tests
+
+on: workflow_call
+
+jobs:
+  test_and_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Running tests suite
+        run: echo "tests running"
+
+      - name: Running build project
+        run: echo "build"

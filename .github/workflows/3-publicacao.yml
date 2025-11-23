@@ -1,0 +1,20 @@
+name: Publish Project
+
+on:
+  workflow_run:
+    workflows: [Project Build and Tests]
+    types: [completed]
+
+jobs:
+  on-success:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Workflow passes successfully
+        run: echo 'The triggering workflow passed'
+  on-failure:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - name: Workflow failed
+        run: echo 'The triggering workflow failed'
