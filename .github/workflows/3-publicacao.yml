@@ -2,7 +2,7 @@ name: Publish Project
 
 on:
   workflow_run:
-    workflows: [Project Build and Tests]
+    workflows: [Environment Validation]
     types: [completed]
 
 jobs:
